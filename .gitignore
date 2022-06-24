@@ -16,3 +16,6 @@ web-build/
 # IDE's
 .vscode
 .idea
+
+# Eslint
+.eslintcache
