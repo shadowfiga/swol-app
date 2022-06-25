@@ -7,14 +7,25 @@ import {
   TextInput,
 } from 'react-native';
 import { FontSizes } from '../../constants/font-sizes';
+import { useNavigator } from '../hooks/use-navigator';
+import { AppRoutes } from '../../constants/app-routes';
 
 const LoginScreen: FC = () => {
+  const { navigate } = useNavigator();
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>SwolApp</Text>
       <TextInput placeholder="email" />
       <TextInput placeholder="password" />
-      <Button title="login" />
+      <Button
+        title="login"
+        onPress={() => {
+          navigate(AppRoutes.home, {
+            merge: true,
+          });
+        }}
+      />
     </SafeAreaView>
   );
 };

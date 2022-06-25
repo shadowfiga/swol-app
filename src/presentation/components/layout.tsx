@@ -1,12 +1,14 @@
 import { FC, PropsWithChildren } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import Menu from './menu';
+import { PropsWithChildrenOnly } from '../../types/props-with-children-only';
+import { MenuContextProvider } from '../../application/context/menu-context';
 
-const Layout: FC<PropsWithChildren<any>> = (props) => {
+const Layout: FC<PropsWithChildrenOnly> = (props) => {
   const { children } = props;
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>{children}</ScrollView>
+      <ScrollView style={styles.container}>{children}</ScrollView>
       <Menu />
     </SafeAreaView>
   );

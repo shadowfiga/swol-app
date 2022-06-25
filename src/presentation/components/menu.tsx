@@ -1,12 +1,21 @@
-import { FC, PropsWithChildren } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { FC } from 'react';
+import { Button, StyleSheet, View } from 'react-native';
+import { PropsWithChildrenOnly } from '../../types/props-with-children-only';
+import {
+  MenuState,
+  useMenuContext,
+} from '../../application/context/menu-context';
 
-const Menu: FC<PropsWithChildren<any>> = () => {
+const Menu: FC<PropsWithChildrenOnly> = () => {
+  const { state, setState } = useMenuContext();
   return (
     <View style={styles.container}>
-      <Text>home</Text>
-      <Text>workout</Text>
-      <Text>statistics</Text>
+      <Button title="home" onPress={() => setState(MenuState.home)} />
+      <Button title="workout" onPress={() => setState(MenuState.workout)} />
+      <Button
+        title="statistics"
+        onPress={() => setState(MenuState.statistics)}
+      />
     </View>
   );
 };
