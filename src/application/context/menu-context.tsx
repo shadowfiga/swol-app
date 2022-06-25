@@ -1,19 +1,17 @@
 import {
   createContext,
   FC,
-  PropsWithChildren,
   useCallback,
   useContext,
   useState,
 } from 'react';
-import Menu from '../../presentation/components/menu';
 import { PropsWithChildrenOnly } from '../../types/props-with-children-only';
 
 export enum MenuState {
   home,
   workout,
   statistics,
-  profile,
+  settings,
 }
 
 interface MenuContext {
