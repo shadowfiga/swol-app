@@ -1,9 +1,8 @@
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppRoutes } from './src/constants/app-routes';
 import LoginScreen from './src/presentation/screens/login-screen';
-import { FC, PropsWithChildren } from 'react';
+import { FC } from 'react';
 import HomeScreen from './src/presentation/screens/home-screen';
 import { PropsWithChildrenOnly } from './src/types/props-with-children-only';
 import { MenuContextProvider } from './src/application/context/menu-context';

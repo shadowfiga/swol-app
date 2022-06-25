@@ -9,7 +9,8 @@
   "parserOptions": { "project": ["./tsconfig.json"] },
   "plugins": [
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "unused-imports"
   ],
   "rules": {
     "@typescript-eslint/strict-boolean-expressions": [
@@ -18,6 +19,8 @@
         "allowString" : false,
         "allowNumber" : false
       }
-    ]
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": "error"
   }
 }
