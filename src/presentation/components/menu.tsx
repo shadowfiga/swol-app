@@ -7,18 +7,28 @@ import {
 import { Box, Center, HStack, Pressable, Text } from 'native-base';
 
 const Menu: FC<PropsWithChildrenOnly> = () => {
-  const { setState } = useMenuContext();
+  const { state, setState } = useMenuContext();
   return (
     <Box width="100%">
-      <HStack bg="indigo.600" alignItems="center" safeAreaBottom shadow={6}>
-        <Pressable py="3" flex={1} onPress={() => setState(MenuState.home)}>
+      <HStack
+        bg="indigo.600"
+        alignItems="center"
+        justifyContent="space-evenly"
+        safeAreaBottom
+        shadow={6}
+        py="3">
+        <Pressable
+          onPress={() => setState(MenuState.home)}
+          opacity={state === MenuState.home ? 1 : 0.5}>
           <Center>
             <Text color="white" fontSize="12">
               Home
             </Text>
           </Center>
         </Pressable>
-        <Pressable py="2" flex={1} onPress={() => setState(MenuState.workout)}>
+        <Pressable
+          onPress={() => setState(MenuState.workout)}
+          opacity={state === MenuState.workout ? 1 : 0.5}>
           <Center>
             <Text color="white" fontSize="12">
               Workout
@@ -26,16 +36,17 @@ const Menu: FC<PropsWithChildrenOnly> = () => {
           </Center>
         </Pressable>
         <Pressable
-          py="2"
-          flex={1}
-          onPress={() => setState(MenuState.statistics)}>
+          onPress={() => setState(MenuState.statistics)}
+          opacity={state === MenuState.statistics ? 1 : 0.5}>
           <Center>
             <Text color="white" fontSize="12">
               Statistics
             </Text>
           </Center>
         </Pressable>
-        <Pressable py="2" flex={1} onPress={() => setState(MenuState.settings)}>
+        <Pressable
+          onPress={() => setState(MenuState.settings)}
+          opacity={state === MenuState.settings ? 1 : 0.5}>
           <Center>
             <Text color="white" fontSize="12">
               Settings
